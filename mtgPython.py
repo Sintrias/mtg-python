@@ -33,10 +33,17 @@ print(deckList["Liliana, the Last Hope"])
 
 del deckList["Nissa"]
 print(deckList)
-deckList["Nissa, the Vastwood Seer"] = "2"
+deckList["Nissa, the Vastwood Seer"] = 2
 print(deckList)
 print(len(deckList))
 print(deckList.get("Nissa, the Vastwood Seer"))
 
-print(deckList.keys())
-print(deckList.values())
+current_deck_size = 0
+
+for key, value in deckList.items():
+    current_deck_size += value
+
+if current_deck_size < 60 :
+    print("You have %i cards in your deck. Your deck must have at least 60 cards"%(current_deck_size))
+else :
+    print("Your deck have enough cards to be legal deck")
